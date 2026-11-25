@@ -1,0 +1,8 @@
+{
+  "appId": "com.brainflip.game",
+  "appName": "Brainflip",
+  "webDir": "www",
+  "android": {
+    "backgroundColor": "#FFF4E0"
+  }
+}

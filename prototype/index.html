@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="theme-color" content="#FFF4E0">
+<meta name="description" content="Brainflip — tricky phone puzzles where the phone itself is part of the puzzle.">
+<title>Brainflip</title>
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+<!-- line-boil filters: 3 turbulence seeds, cycled ~8x/sec for the hand-drawn wobble -->
+<svg class="bf-defs" aria-hidden="true">
+  <defs>
+    <filter id="boil0" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="1" seed="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <filter id="boil1" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="1" seed="9" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <filter id="boil2" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="1" seed="17" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter>
+  </defs>
+</svg>
+
+<div id="stage">
+  <!-- TITLE -->
+  <section id="screen-title" class="screen">
+    <div class="title-doodles" id="title-doodles"></div>
+    <div class="logo" id="logo" aria-label="Brainflip"></div>
+    <p class="tagline">Think <b>outside</b> the screen.</p>
+    <div class="title-hero" id="title-hero"></div>
+    <div class="title-stats" id="title-stats"></div>
+    <button class="btn btn-pink btn-big" id="btn-play">PLAY</button>
+    <div class="level-pick" id="level-pick"></div>
+    <div class="title-toast" id="title-toast" role="status" aria-live="polite"></div>
+    <button class="btn-round btn-settings" id="btn-settings" aria-label="Settings"></button>
+    <button class="btn-round btn-sound" id="btn-sound" aria-label="Sound"></button>
+    <p class="title-foot">Chapter 1 · Home Sweet Home</p>
+    <div class="overlay hidden" id="title-overlay"></div>
+  </section>
+
+  <!-- LEVEL -->
+  <section id="screen-level" class="screen hidden">
+    <header class="hud">
+      <div class="hud-left">
+        <button class="btn-round" id="btn-menu" aria-label="Back to title"></button>
+        <button class="btn-round btn-mini" id="btn-level-sound" aria-label="Sound"></button>
+      </div>
+      <div class="hud-center">
+        <div class="level-pill">LEVEL <span id="level-num">1</span></div>
+        <div class="endings" id="endings" aria-label="Endings found"></div>
+      </div>
+      <button class="btn-round btn-hint" id="btn-hint" aria-label="Hint"><span class="badge" id="hint-count">3</span></button>
+    </header>
+    <h1 class="prompt" id="prompt"></h1>
+    <div class="scene-wrap" id="scene-wrap"></div>
+    <div class="narrator" id="narrator" role="status" aria-live="polite"><span class="nicon"></span><span class="ntext"></span></div>
+    <canvas id="fx-canvas" width="390" height="780"></canvas>
+    <div class="overlay hidden" id="overlay"></div>
+  </section>
+</div>
+<p class="desk-note">Best on a phone — shaking, tilting and flipping it are part of the puzzles.</p>
+
+<script src="js/core/util.js"></script>
+<script src="js/core/config.js"></script>
+<script src="js/core/audio.js"></script>
+<script src="js/core/input.js"></script>
+<script src="js/art/noodle.js"></script>
+<script src="js/art/icons.js"></script>
+<script src="js/core/game.js"></script>
+<script src="js/levels/level01.js"></script>
+<script src="js/levels/level02.js"></script>
+<script src="js/levels/level03.js"></script>
+<script src="js/levels/level04.js"></script>
+<script src="js/levels/level05.js"></script>
+<script src="js/levels/level06.js"></script>
+<script src="js/levels/level07.js"></script>
+<script src="js/levels/level08.js"></script>
+<script src="js/levels/level09.js"></script>
+<script src="js/levels/level10.js"></script>
+<script src="js/levels/level11.js"></script>
+<script src="js/levels/level12.js"></script>
+<script src="js/levels/level13.js"></script>
+<script src="js/levels/level14.js"></script>
+<script src="js/levels/level15.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "brainflip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Brainflip — tricky phone puzzles",
+  "scripts": {
+    "bundle": "node tools/bundle.mjs",
+    "bundle:prod": "node tools/bundle.mjs --prod",
+    "web": "node tools/bundle.mjs && node tools/prepare-www.mjs",
+    "web:prod": "node tools/bundle.mjs --prod && node tools/prepare-www.mjs",
+    "android:sync": "npm run web && npx cap sync android",
+    "android:sync:prod": "npm run web:prod && npx cap sync android",
+    "android:apk": "npm run android:sync && cd android && ./gradlew assembleDebug",
+    "android:aab": "npm run android:sync:prod && cd android && ./gradlew bundleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.6.2",
+    "@capacitor/core": "^8.6.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.6.2"
+  }
+}

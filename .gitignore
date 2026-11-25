@@ -1,0 +1,14 @@
+node_modules/
+www/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/capacitor-cordova-android-plugins/build/
+android/keystore.properties
+*.keystore
+*.jks
+*.aab
+*.apk
+*.idsig
+apk/
