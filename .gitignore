@@ -12,3 +12,4 @@ android/keystore.properties
 *.apk
 *.idsig
 apk/
+release/
